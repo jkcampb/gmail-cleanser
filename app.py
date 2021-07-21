@@ -23,12 +23,13 @@ def get_labels(imap):
 
     cleanse_list = []
 
-    for search_label in LABELS:
+    for search_label in LABELS:\
+        # add the base label to the list (eg. Ad)
         cleanse_list.append(search_label)
 
         search_folder = search_label + "/"
 
-        # build list of search_label sub-labels
+        # build list of search_label sub-labels (eg. Ad/Newegg)
         result_list = [
             shlex.split(x.decode("utf-8"))[2]
             for x in full_list
